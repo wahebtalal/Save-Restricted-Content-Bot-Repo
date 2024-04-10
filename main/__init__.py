@@ -6,7 +6,7 @@ from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
 
 from decouple import config
-import logging, time, sys
+import logging, time, sys,os
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -15,12 +15,12 @@ logging.getLogger("telethon").setLevel(logging.WARNING)
 
 
 # variables
-API_ID = config("API_ID", default=None, cast=int)
-API_HASH = config("API_HASH", default=None)
-BOT_TOKEN = config("BOT_TOKEN", default=None)
-SESSION = config("SESSION", default=None)
-FORCESUB = config("FORCESUB", default=None)
-AUTH = config("AUTH", default=None)
+API_ID : int= int(os.getenv("API_ID", default=None))
+API_HASH = os.getenv("API_HASH", default=None)
+BOT_TOKEN = os.getenv("BOT_TOKEN", default=None)
+SESSION = os.getenv("SESSION", default=None)
+FORCESUB = os.getenv("FORCESUB", default=None)
+AUTH : int= int(os.getenv("AUTH", default=None))
 SUDO_USERS = []
 
 if len(AUTH) != 0:

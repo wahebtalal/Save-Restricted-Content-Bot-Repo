@@ -20,7 +20,7 @@ API_HASH = os.getenv("API_HASH", default=None)
 BOT_TOKEN = os.getenv("BOT_TOKEN", default=None)
 SESSION = os.getenv("SESSION", default=None)
 FORCESUB = os.getenv("FORCESUB", default=None)
-AUTH : int= int(os.getenv("AUTH", default=None))
+AUTH = os.getenv("AUTH", default=None)
 SUDO_USERS = []
 
 if len(AUTH) != 0:
